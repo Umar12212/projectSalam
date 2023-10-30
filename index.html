@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <h1>{{ title }}</h1>
+    
+    <form @submit.prevent="addNote">
+      <input type="text" v-model="text">
+      <p>Название заметки которое вы вводите: {{ text }}</p>
+      <button class="add">Добавить</button>
+    </form>
+ 
+    <ul v-if="notes.length > 0">
+      <li v-for="item in notes" :key="item.id">
+        <p>id: {{ item.id }}</p>
+        <input type="text" v-model="item.name" v-if="item.editing">
+        <p v-else>Имя заметки: {{ item.name }}</p> 
+        <p>Ячейка: {{ item.id }}</p> 
+        <button @click="delNote(item)" class="del">X</button>
+        <button @click="editNote(item)" v-if="!item.editing">Редактировать</button>
+        <button @click="saveNote(item)" v-if="item.editing">Сохранить</button>
+      </li>
+    </ul>
+    <h2 v-else>Нет заметок</h2>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

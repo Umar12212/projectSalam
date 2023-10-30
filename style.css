@@ -1,0 +1,60 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+h1{
+  text-align: center;
+}
+ul{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 30px;
+}
+
+li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: purple;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 0;
+  gap: 20px;
+  position: relative;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+input{
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+.add{
+  background: green;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+.del{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  color: white;
+  background: red;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
